@@ -16,9 +16,13 @@ import img2 from "../public/images/img-2.webp";
 import img3 from "../public/images/img-3.webp";
 import img4 from "../public/images/img-4.webp";
 import img5 from "../public/images/img-5.webp";
+import img6 from "../public/images/img-6.webp";
+import img7 from "../public/images/img-7.webp";
+import img8 from "../public/images/img-8.webp";
+
 
 const markoOne = Marko_One({ subsets: ["latin"], weight: ["400"] });
-const images = [img1, img2, img3, img4, img5];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 const features = [
   {
     src: img1,
@@ -43,7 +47,22 @@ const features = [
   {
     src: img5,
     thumb: "/images/img-5-thumb.webp",
-    text: "<a>Obiora Okaka</a><p>Location - Anambra</p>",
+    text: "<a>Obiora Eze</a><p>Location - Anambra</p>",
+  },
+  {
+    src: img6,
+    thumb: "/images/img-6-thumb.webp",
+    text: "<a>Jones Chukwunonso</a><p>Location - Enugu</p>",
+  },
+  {
+    src: img7,
+    thumb: "/images/img-7-thumb.webp",
+    text: "<a>Badmus Okike</a><p>Location - Ebonyi</p>",
+  },
+  {
+    src: img8,
+    thumb: "/images/img-8-thumb.webp",
+    text: "<a>Raphael Raphael</a><p>Location - Enugu</p>",
   },
 ];
 
@@ -74,16 +93,16 @@ const Gallery = () => {
       <Tabs isLazy>
         <div className={markoOne.className}>
           <TabList display='flex' justifyContent='center'>
-            <Tab fontSize='xl' fontWeight='medium'>
+            <Tab fontSize='lg' fontWeight='medium'>
               ALL
             </Tab>
-            <Tab fontSize='xl' fontWeight='medium'>
+            <Tab fontSize='lg' fontWeight='medium'>
               MEN
             </Tab>
-            <Tab fontSize='xl' fontWeight='medium'>
+            <Tab fontSize='lg' fontWeight='medium'>
               WOMEN
             </Tab>
-            <Tab fontSize='xl' fontWeight='medium'>
+            <Tab fontSize='lg' fontWeight='medium'>
               TEENS
             </Tab>
           </TabList>
@@ -126,10 +145,11 @@ const Gallery = () => {
                 startAnimationDuration={400}
                 plugins={[lgThumbnail, lgZoom]}
                 appendSubHtmlTo='.lg-item'
-                download
+                download={true}
                 closable
                 showCloseIcon
-                easing="ease"
+                swipeToClose={true}
+                easing='ease'
                 dynamic
                 dynamicEl={features.map((item) => ({
                   src: item.src.src,
