@@ -19,6 +19,33 @@ import img5 from "../public/images/img-5.webp";
 
 const markoOne = Marko_One({ subsets: ["latin"], weight: ["400"] });
 const images = [img1, img2, img3, img4, img5];
+const features = [
+  {
+    src: img1,
+    thumb: "/images/img-1-thumb.webp",
+    text: "<a>Muri Banju</a><p>Location - Calabar</p>",
+  },
+  {
+    src: img2,
+    thumb: "/images/img-2-thumb.webp",
+    text: "<a>Flying Michael</a><p>Location - Ekiti</p>",
+  },
+  {
+    src: img3,
+    thumb: "/images/img-3-thumb.webp",
+    text: "<a>Four Friends</a><p>Location - Enugu</p>",
+  },
+  {
+    src: img4,
+    thumb: "/images/img-4-thumb.webp",
+    text: "<a>Majuk Can</a><p> Location - Abia</p>",
+  },
+  {
+    src: img5,
+    thumb: "/images/img-5-thumb.webp",
+    text: "<a>Obiora Okaka</a><p>Location - Anambra</p>",
+  },
+];
 
 import type { LightGallery } from "lightgallery/lightgallery";
 // import LightGalleryComponent from 'lightgallery/react'
@@ -96,36 +123,19 @@ const Gallery = () => {
                 }}
                 mode='lg-fade'
                 speed={500}
+                startAnimationDuration={400}
                 plugins={[lgThumbnail, lgZoom]}
                 appendSubHtmlTo='.lg-item'
+                download
+                closable
+                showCloseIcon
+                easing="ease"
                 dynamic
-                dynamicEl={[
-                  {
-                    src: "/images/img-1.webp",
-                    thumb: "/images/img-1-thumb.webp",
-                    subHtml: "<a>Muri Banju</a><p>Location - Calabar</p>",
-                  },
-                  {
-                    src: "/images/img-2.webp",
-                    thumb: "/images/img-2-thumb.webp",
-                    subHtml: "<a>Flying Michael</a><p>Location - Ekiti</p>",
-                  },
-                  {
-                    src: "/images/img-3.webp",
-                    thumb: "/images/img-3-thumb.webp",
-                    subHtml: "<a>Four Friends</a><p>Location - Enugu</p>",
-                  },
-                  {
-                    src: "/images/img-4.webp",
-                    thumb: "/images/img-4-thumb.webp",
-                    subHtml: "<a>Majuk Can</a><p> Location - Abia</p>",
-                  },
-                  {
-                    src: "/images/img-5.webp",
-                    thumb: "/images/img-5-thumb.webp",
-                    subHtml: "<a>Obiora Okaka</a><p>Location - Anambra</p>",
-                  },
-                ]}
+                dynamicEl={features.map((item) => ({
+                  src: item.src.src,
+                  thumb: item.thumb,
+                  subHtml: item.text,
+                }))}
               />
             </Box>
           </TabPanel>
