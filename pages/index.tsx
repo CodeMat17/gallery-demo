@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import Gallery from "@/components/Gallery";
+import NavHeader from "@/components/NavHeader";
+import { Box, chakra } from "@chakra-ui/react";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] })
+export default function Home() { 
 
-export default function Home() {
   return (
     <>
       <Head>
@@ -13,8 +13,18 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={inter.className}>
-     Hello
+
+      <main>
+        <Box 
+          minH='100vh'
+          w='full'
+          bgImage={`url(/bgImg.webp)`}
+          bgPos='top'
+          bgSize='cover'
+          color='white'>
+          <NavHeader />
+          <Gallery />
+        </Box>
       </main>
     </>
   );
