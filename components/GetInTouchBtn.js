@@ -22,12 +22,18 @@ const GetInTouchBtn = () => {
           borderColor='gray.400'>
           Get in touch
         </MenuButton>
-        <MenuList>
+        <MenuList bg='gray.900' px='2' borderColor='gray'>
           <Link href='mailto:codemat.biz@gmail.com'>
-            <MenuItem icon={<BiMailSend size={23} />}>Send Email</MenuItem>
+            <MenuItem
+              rounded='md'
+              bg='gray'
+              mb='2'
+              icon={<BiMailSend size={23} />}>
+              Send Email
+            </MenuItem>
           </Link>
           <Link href='https://wa.me/2348063856120' target='_blank'>
-            <MenuItem icon={<BsWhatsapp size={23} />}>
+            <MenuItem rounded='md' bg='gray' icon={<BsWhatsapp size={23} />}>
               Chat on WhatsApp
             </MenuItem>
           </Link>
