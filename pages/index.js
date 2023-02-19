@@ -1,9 +1,20 @@
-import Gallery from "@/components/Gallery";
-import NavHeader from "@/components/NavHeader";
-import { Box, chakra } from "@chakra-ui/react";
+import Gallery from "../components/Gallery";
+import NavHeader from "../components/NavHeader";
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
+import {loadImages} from '../lib/loadImages'
 
-export default function Home() { 
+export const getStaticProps = async () => {
+  const images = loadImages
+
+  return {
+    props: {
+      images
+    },
+  };
+};
+
+export default function Home({images}) { 
 
   return (
     <>
@@ -23,7 +34,7 @@ export default function Home() {
           bgSize='cover'
           color='white'>
           <NavHeader />
-          <Gallery />
+          <Gallery images={images} />
         </Box>
       </main>
     </>
