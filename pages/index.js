@@ -3,6 +3,7 @@ import NavHeader from "../components/NavHeader";
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import {loadImages} from '../lib/loadImages'
+import Footer from "../components/Footer";
 
 export const getStaticProps = async () => {
   const images = loadImages
@@ -35,6 +36,7 @@ export default function Home({images}) {
           color='white'>
           <NavHeader />
           <Gallery images={images} />
+          <Footer />
         </Box>
       </main>
     </>

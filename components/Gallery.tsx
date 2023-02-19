@@ -28,7 +28,6 @@ import "lightgallery/css/lightgallery.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-
 type GalleryProps = {
   images: {
     id: number;
@@ -56,24 +55,31 @@ const Gallery = ({ images }: GalleryProps) => {
   };
   return (
     <Box pt='6' pb='12' maxW='6xl' mx='auto'>
-      <Text
-        className={markoOne.className}
-        textAlign='center'
-        bgGradient='linear(to-l, #7928CA, #FF0080)'
-        bgClip='text'
-        fontSize={["3xl", "4xl"]}
-        fontWeight='semibold'>
-        Ken-Snap Studio
-      </Text>
-      <Text
-        mb='8'
-        color='blue.500'
-        letterSpacing='1px'
-        textAlign='center'
-        fontWeight='light'>
-        welcome to our gallery
-      </Text>
-
+      <Box
+        display='flex'
+        flexDir={{ base: "column", md: 'row' }}
+        alignItems='center'
+        justifyContent='center'
+        mb='8'>
+        <Image alt='' width={150} height={150} src='/camera-logo.svg' />
+      <Box textAlign='center'>
+        <Text
+          className={markoOne.className}
+          bgGradient='linear(to-l, #7928CA, #FF0080)'
+          bgClip='text'
+          fontSize={["3xl", "4xl"]}
+          fontWeight='semibold'>
+          Ken-Snap Studio
+        </Text>
+        <Text
+          color='blue.700'
+          letterSpacing='1px'
+          fontWeight='light'>
+          welcome to our photo gallery
+        </Text>
+      </Box>
+      </Box>
+     
       <Tabs isLazy>
         <div className={markoOne.className}>
           <TabList display='flex' justifyContent='center'>

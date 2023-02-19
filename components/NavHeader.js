@@ -1,4 +1,5 @@
 import { Box, Button, Image } from "@chakra-ui/react";
+import GetInTouchBtn from "./GetInTouchBtn";
 
 const NavHeader = () => {
   return (
@@ -10,22 +11,9 @@ const NavHeader = () => {
         alignItems='center'
         justifyContent='space-between'>
         <Box>
-          <Image alt='logo' src='/camera-logo.svg' w='80px' h='80px' />
+          <Image alt='logo' src='/camera-logo.svg' w='70px' h='70px' />
         </Box>
-        <Button
-          variant='outline'
-          rounded='full'
-          _hover={{
-            bg: "transparent",
-            color: "gray.100",
-            borderColor: "blue.800",
-            shadow: "dark-lg",
-          }}
-          // bg='white'
-          color='gray.400'
-          borderColor='gray.400'>
-          Get in touch
-        </Button>
+        <GetInTouchBtn />
       </Box>
     </Box>
   );
